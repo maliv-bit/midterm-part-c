@@ -24,7 +24,7 @@ public class Days {
     public static void main(String[] args) {
          
     Scanner in =new Scanner(System.in);
-    System.out.println("Enter the day number (one,two,three,four,five) in string");
+    System.out.println("Enter the days in number (1-7):");
     String code = in.next();
     Weekdays t= new Weekdays();
     t.nameOfDay(code); 

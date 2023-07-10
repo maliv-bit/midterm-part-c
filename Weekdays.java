@@ -8,36 +8,33 @@ package days;
  *
  * @author sivagamasrinivasan
  */
-public class Weekdays 
-{
-  public void nameOfDay(String code)
-     {
-    switch(code.toUpperCase())
-      {
-      case "ONE":
-        System.out.println("Monday");
-        break;
-      case "TWO":
-        System.out.println("Tuesday");
-        break;
-      case "THREE":
-        System.out.println("Wednesday");
-        break;
-      case "FOUR":
-        System.out.println("Thursday");
-        break;
-      case "FIVE":
-        System.out.println("Friday");
-        break;
-      case "SIX":
-        System.out.println("Saturday");
-        break;
-      case "SEVEN":
-        System.out.println("Sunday");
-        break;
+public class Weekdays {
+    public enum Day {
+        MONDAY("Monday"),
+        TUESDAY("Tuesday"),
+        WEDNESDAY("Wednesday"),
+        THURSDAY("Thursday"),
+        FRIDAY("Friday"),
+        SATURDAY("Saturday"),
+        SUNDAY("Sunday");
+
+        private String dayName;
+
+        Day(String dayName) {
+            this.dayName = dayName;
+        }
+
+        public String getDayName() {
+            return dayName;
+        }
     }
-  
-}
-}
 
+    public void nameOfDay(String code) {
+        Day[] days = Day.values();
 
+        if (code >= one && code <= days.length) {
+            System.out.println(days[code - one].getDayName());
+        } else {
+            System.out.println("Invalid day number!");
+        }
+    }
